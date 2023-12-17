@@ -1,0 +1,28 @@
+/* Add this to your CSS file */
+.error-message {
+    border: 1px solid #f44336; /* Bright red border */
+    background-color: #ffebee; /* Light red background */
+    color: #f44336; /* Bright red text color */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.error-message p {
+    margin-bottom: 10px;
+}
+
+.error-message ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.error-message li:before {
+    content: "\2022";
+    color: #f44336;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
