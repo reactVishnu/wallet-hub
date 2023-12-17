@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Wallet Hub</title>
+  <link rel="stylesheet" href="{% static 'operations/login.css' %}?{% now 'U' %}">
+  <link rel="stylesheet" href="{% static 'operations/error.css' %}?{% now 'U' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'operations/favicon.ico' %}"/>
+
+</head>
+<body>
+  <div class="wrapper">
+      {% if messages %}
+    <div class="error-message">
+        <ul>
+            {% for message in messages %}
+                <p>
+                 <li>{{ message }}</li>
+                </p>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+    <form method="POST">
+        {% csrf_token %}
+      <h2>Login</h2>
+        <div class="input-field">
+        <input type="text" name="email" id="email" required>
+        <label>Enter your email</label>
+      </div>
+      <div class="input-field">
+        <input type="password" name="password" id="pass" required>
+        <label>Enter your password</label>
+      </div>
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember">
+          <p>Remember me</p>
+        </label>
+        <a href="#">Forgot password?</a>
+      </div>
+      <button type="submit">Log In</button>
+      <div class="register">
+        <p>Don't have an account? <a href="#">Register</a></p>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
