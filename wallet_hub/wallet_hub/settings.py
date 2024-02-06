@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_spectacular',
     'core',  # Core App
-    'operations'  # Operations App
+    'operations',  # Operations App
+    'service',
 ]
 
 MIDDLEWARE = [

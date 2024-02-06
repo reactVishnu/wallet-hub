@@ -26,7 +26,7 @@ def login_view(request):
         user = authenticate(request, email=email, password=password)
         if user is not None:
             login(request, user)
-            return redirect(reverse('operations:success'))
+            return redirect(reverse('service:login'))
         else:
             messages.error(request, 'Email or Password is incorrect. Please try again')
             return render(request, 'operations/login.html', {'current_page': 'login'})
@@ -66,7 +66,7 @@ def signup_view(request):
             print("Validation run succesfull")
             user = get_user_model().objects.create_user(name=name, email=email, password=password)
             my_group.user_set.add(user)
-            print("created succesfull")
+            print("created successful")
             return render(request, 'operations/login.html', {'current_page': 'signup'})
 
     except Exception as e:
